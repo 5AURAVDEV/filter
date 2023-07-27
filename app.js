@@ -2,6 +2,8 @@ let filter=document.getElementById("filter")
 filter.addEventListener("keyup",xyz)
 let submit=document.getElementById("addForm")
 submit.addEventListener("submit",addItems)
+let del=document.getElementById("items")
+del.addEventListener("click",remove)
 
 function xyz(e){
     let text=e.target.value.toLowerCase()
@@ -44,3 +46,11 @@ function addItems(e){
     c.appendChild(newli)
 }
 
+function remove(e){
+    if(e.target.className.includes('delete')){
+        if(confirm("are u sure?")){
+            let a=e.target.parentElement
+            a.parentElement.removeChild(a)
+        }
+    }
+}
