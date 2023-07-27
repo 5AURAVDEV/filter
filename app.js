@@ -54,3 +54,11 @@ function remove(e){
         }
     }
 }
+
+let j=document.getElementsByClassName("list-group-item")
+for(i=0;i<j.length;i++){
+    let newbtn=document.createElement("button")
+    newbtn.className="btn btn-secondary btn-sm float-right"
+    newbtn.innerText="EDIT"
+    j[i].appendChild(newbtn)
+}
